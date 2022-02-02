@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 	"sort"
 	"strconv"
@@ -110,6 +111,6 @@ func sendJsonEncodedText(w http.ResponseWriter, statusCode int, results interfac
 
 	err := json.NewEncoder(w).Encode(results)
 	if err != nil {
-		sendJsonEncodedText(w, http.StatusBadRequest, "Error while writing to stream: "+err.Error())
+		fmt.Println("error while encoding text to json:" + err.Error())
 	}
 }
