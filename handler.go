@@ -9,8 +9,8 @@ import (
 	"strings"
 )
 
-func handler(w http.ResponseWriter, r *http.Request) {
-	if r.URL.Path != "/" {
+func handleStringProcessing(w http.ResponseWriter, r *http.Request) {
+	if r.URL.Path != "/frequency" {
 		http.Error(w, "404 not found.", http.StatusNotFound)
 		return
 	}

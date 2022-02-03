@@ -5,8 +5,8 @@ import (
 )
 
 func main() {
-	http.HandleFunc("/", handler)
-	err := http.ListenAndServe(":8080", nil)
+	http.HandleFunc("/frequency", handleStringProcessing)
+	err := http.ListenAndServe(":8085", nil)
 	if err != nil {
 		return
 	}
